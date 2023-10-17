@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiAppEjercicio1_2.Views.EmpleadoPage"
+             Title="{Binding TituloPagina}">
+    
+    <VerticalStackLayout Padding="15">
+
+        <ActivityIndicator IsVisible="{Binding LoadingEsVisible}"
+                           IsRunning="{Binding LoadingEsVisible}"
+                           Color="Blue"
+                           HeightRequest="30"
+                           />
+
+        <Label Text="Nombre"/>
+        <Entry Text="{Binding EmpleadoDto.Nombre}" Margin="0,0,0,10"/>
+
+        <Label Text="Apellido"/>
+        <Entry Text="{Binding EmpleadoDto.Apellido}" Margin="0,0,0,10"/>
+
+        <Label Text="Fecha de Nacimiento"/>
+        <DatePicker Date="{Binding EmpleadoDto.FechaNacimiento}" Margin="0,0,0,10"/>
+
+        <Label Text="Correo"/>
+        <Entry Text="{Binding EmpleadoDto.Correo}" Margin="0,0,0,10"/>
+
+        <Button Text="Agregar Informacion" Command="{Binding Agregar_InformacionCommand}" BackgroundColor="Orange"/>
+
+    </VerticalStackLayout>
+</ContentPage>
